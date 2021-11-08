@@ -382,7 +382,6 @@ func getCanonicalName(parent, child string) string {
 
 // IsUpToDate checks whether the actual state is up-to-date with the given desired state
 func IsUpToDate(actual, desired interface{}, opts ...LateInitOption) (bool, error) {
-    return true
 	valDesired := reflect.ValueOf(desired)
 	if valDesired.Kind() != reflect.Ptr {
 		return false, errors.Errorf("desired must be of pointer kind, got: %s", valDesired.Kind().String())
